@@ -139,3 +139,58 @@ listaCidades.forEach(cidade => {
     //document.getElementById("maritmos").innerHTML = lista;
     //document.getElementById("maritmos").innerHTML
 /* end local storage cidades */
+
+
+  /*Codigo para popup dos pagamentoa*/
+
+  function openPopup(popupId) {
+    document.getElementById(popupId).style.display = "block";
+  }
+  
+  function closePopup(popupId) {
+    document.getElementById(popupId).style.display = "none";
+  }
+
+/*Fim codigo do popup dos pagamentos*/
+
+/*Codigo para o email
+
+  function enviarEmail(popupId) {
+    // Obter o valor do campo de email preenchido pelo usuário
+    var email = document.getElementById('email').value;
+
+    // Obter os valores dos outros campos do formulário, se necessário
+    var contacto = document.getElementById('contact').value;
+
+    // Construir o corpo do email com os valores do formulário
+    var corpoEmail = "Detalhes do cliente:\n\n" +
+                     "Email: " + email + "\n" +
+                     "Contacto: " + contacto;
+
+    // Enviar o email usando o protocolo "mailto:" com o email do usuário como destinatário
+    window.location.href = "mailto:" + email + "?subject=Pagamento&body=" + encodeURIComponent(corpoEmail);
+
+    // Fechar o popup após enviar o email
+    closePopup(popupId);
+  } */
+
+function enviarEmail() {
+  // Obter o valor do campo de email preenchido pelo usuário
+  var email = document.getElementById('email').value;
+
+  // Obter o valor do campo de contato preenchido pelo usuário
+  var contato = document.getElementById('contact').value;
+
+  // Construir o corpo do email com os valores do formulário
+  var corpoEmail = "Detalhes do cliente:\n\n" +
+                   "Email: " + email + "\n" +
+                   "Contato: " + contato;
+
+  // Enviar o email usando o protocolo "mailto:" com o email do usuário como destinatário
+  window.location.href = "mailto:" + email + "?subject=Pagamento&body=" + encodeURIComponent(corpoEmail);
+
+  // Fechar o popup após enviar o email
+  closePopup('popup1');
+}
+
+  /*Fim codigo email*/
