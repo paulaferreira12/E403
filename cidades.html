@@ -96,68 +96,52 @@
     <!-- Navbar End -->
 
 
-
     <!-- Header Start -->
-
+    <!--
     <div class="container-fluid page-headerporto">
         <div class="container">
             <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 500px">
             </div>
         </div>
     </div>
-
+    -->
     <!-- Header End -->
 
+    <!-- Content Start-->
 
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = { "default_language": "pt", "native_language_names": true, "detect_browser_language": true, "languages": ["pt", "fr", "de", "es", "en", "zh-CN"], "wrapper_selector": ".gtranslate_wrapper", "float_switcher_open_direction": "bottom", "flag_style": "3d" }</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-    <div class="container-fluid py-1">
-        <div class="container pt-5 pb-1">
+    <!--
+    <section id="locais">
+        <div class="container-fluid py-5">
+            <div class="container pt-5 pb-3">
+                <div class="text-center mb-3 pb-3">
+                    <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destinos</h6>
+                    <h1>Explora os nossos principais destinos</h1>
+                </div>
+                <div class="row">
+                    <div class="row cidade" id="listaCidades">
 
-            <div class="text-center mb-1 pb-1">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Porto</h6>
-                <h1 class="text-black">Explore o<span class="text-primary"> Porto</span> como um especialista!</h1>
-            </div>
-        </div>
-    </div>
-
-    <hr style="width: 50%; height: 0.5rem; background-color: #187C3A; border: none; margin: 2rem auto;">
-
-    <div class="text-center px-5 py-1 textoguias">
-        <p>Cansado de passeios turísticos, pré-programados e lotados pelo país?</p>
-        <p>Venha e disfrute desses passeios privados, seguros, interativos e ecológicos. Descubra os segredos de
-            Portugal , aprenda a sua história, cultura e tradições.
-            Beneficie de toda a experiência e veja todas as suas perguntas respondidas, visitando as principais atrações
-            e descobrindo joias escondidas . Confira todas os temas e roteiros disponíveis que lhe mostrarão a cidade de
-            diferentes perspectivas. </p>
-
-    </div>
-
-
-    <div class="d-flex justify-content-center">
-        <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserva a tua visita</a>
-    </div>
-
-
-    <div class="container-fluid page-headerporto2">
-        <div class="container py-5">
-            <div class="d-flex flex-column align-items-center mt-5" style="min-height: 400px">
-                <!--<div class="d-inline-flex text-white">
-                    <h2 class="text-left text-white mt-5 ml-1">Descubra os segredos do Porto! </h2>
-                    <h2 class="text-right text-white mt-5 ml-5">Aprenda a sua história, cultura e tradições. </h2>
-                </div>-->
-                <div class="d-inline-flex text-white">
-                    <div class="column2 py-5">
-                        <h2 class="text-md-left text-white ">Descubra os segredos <p>do Porto!</p>
-                        </h2>
-                    </div>
-                    <div class="column2 py-5">
-                        <h2 class="text-right text-white  ml-5">Aprenda a sua história, cultura e tradições. </h2>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    -->
+    <div class="container">
+        <center>
+            <div class="row cidade" id="cidades">
+            
+            </div>
+        </center>
+        
     </div>
+    
+    <!-- Content End-->
 
+    <!-- Feedback Start-->
 
     <div class="container-fluid py-1">
         <div class="container pt-5 pb-1">
@@ -384,6 +368,9 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/getCidades.js"></script>
+    <script src="bd/cidades.js"></script>
+    <script src="js/a.js"></script>
 </body>
 
 </html>

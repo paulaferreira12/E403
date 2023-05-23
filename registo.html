@@ -24,6 +24,13 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Toggle libraries -->
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!---->
+
 </head>
 
 <body>
@@ -75,9 +82,9 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.html" class="nav-item nav-link ">Home</a>
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
                         <!--<a href="about.html" class="nav-item nav-link">Países</a>-->
-                        <a href="index.html#locais" class="nav-item nav-link active">Locais</a>
+                        <a href="index.html#locais" class="nav-item nav-link">Locais</a>
                         <a href="guide.html" class="nav-item nav-link ">Guias</a>
                         <a href="feedback.html" class="nav-item nav-link">FeedBack</a>
                         <a href="login.html" class="nav-item nav-link">Login</a>
@@ -98,192 +105,99 @@
 
 
     <!-- Header Start -->
-
-    <div class="container-fluid page-headerporto">
+    <!-- Header Start -->
+    <div class="container-fluid page-header3">
         <div class="container">
-            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 500px">
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+                <!--
+                <h3 class="display-4 text-white text-uppercase">Conhece os nossos guias</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a href="index.html" class="text-white" href="">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">Os nossos Guias</p>
+                </div>
+                -->
             </div>
         </div>
     </div>
-
     <!-- Header End -->
-
-
 
     <div class="container-fluid py-1">
         <div class="container pt-5 pb-1">
 
             <div class="text-center mb-1 pb-1">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Porto</h6>
-                <h1 class="text-black">Explore o<span class="text-primary"> Porto</span> como um especialista!</h1>
+                <h1>REGISTO</h1>
             </div>
         </div>
     </div>
 
     <hr style="width: 50%; height: 0.5rem; background-color: #187C3A; border: none; margin: 2rem auto;">
 
-    <div class="text-center px-5 py-1 textoguias">
-        <p>Cansado de passeios turísticos, pré-programados e lotados pelo país?</p>
-        <p>Venha e disfrute desses passeios privados, seguros, interativos e ecológicos. Descubra os segredos de
-            Portugal , aprenda a sua história, cultura e tradições.
-            Beneficie de toda a experiência e veja todas as suas perguntas respondidas, visitando as principais atrações
-            e descobrindo joias escondidas . Confira todas os temas e roteiros disponíveis que lhe mostrarão a cidade de
-            diferentes perspectivas. </p>
+    <!-- LOGIN FORM START -->
 
-    </div>
-
-
-    <div class="d-flex justify-content-center">
-        <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserva a tua visita</a>
-    </div>
-
-
-    <div class="container-fluid page-headerporto2">
-        <div class="container py-5">
-            <div class="d-flex flex-column align-items-center mt-5" style="min-height: 400px">
-                <!--<div class="d-inline-flex text-white">
-                    <h2 class="text-left text-white mt-5 ml-1">Descubra os segredos do Porto! </h2>
-                    <h2 class="text-right text-white mt-5 ml-5">Aprenda a sua história, cultura e tradições. </h2>
-                </div>-->
-                <div class="d-inline-flex text-white">
-                    <div class="column2 py-5">
-                        <h2 class="text-md-left text-white ">Descubra os segredos <p>do Porto!</p>
-                        </h2>
-                    </div>
-                    <div class="column2 py-5">
-                        <h2 class="text-right text-white  ml-5">Aprenda a sua história, cultura e tradições. </h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="container-fluid py-1">
-        <div class="container pt-5 pb-1">
-
-            <div class="text-center mb-1 pb-1">
-                <h1>Feedback dos nossos visitantes </h1>
-            </div>
-        </div>
-    </div>
-
-    <!-- Testimonial Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
+            <section class="vh-100">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6 text-black">
+
+                            <!--<form onsubmit="loginFunc()">-->
+
+                                <div
+                                    class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+                                    <form style="width: 23rem;">
+
+                                        <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"></h3>
+                                        <a href="" class="navbar-brand">
+                                            <h1 class="m-0 text-primary"
+                                                style="display: flex; justify-content: center; align-items: center; height: 20vh;">
+                                                <span class="text-dark">Explore</span>Makers
+                                            </h1>
+                                        </a>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="email" id="email" class="form-control form-control-lg" placeholder="Introduza o email"/>
+                                            <!--<label class="form-label" >Endereço de Email</label>-->
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="password" id="password" class="form-control form-control-lg" placeholder="Introduza a password"/>
+                                            <!--<label class="form-label" for="form2Example28">Password</label>-->
+                                        </div>
+
+                                        <div class="pt-1 mb-4">
+                                            <a href="login.html"><button id="rgstr_btn" class="btn btn-primary btn-lg btn-block"
+                                                    type="button submit" value="Registar">Registar</button></a>
+                                                    <!--<p id="result">Welcome, Login...</p>-->
+                                        </div>
+
+                                        <p class="small mb-5 pb-lg-2"><u><a class="text-muted" href="#!">Forgot
+                                                    password?</a></u></p>
 
 
-            <div class="owl-carousel testimonial-carousel">
-                <div class="text-center pb-4">
-                    <img class="img-fluid mx-auto" src="img/testimonial-1.jpg" style="width: 100px; height: 100px;">
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">"Eu tive uma experiência incrível com a agência de viagens. Eles planejaram tudo
-                            para mim e
-                            me deram dicas úteis para aproveitar ao máximo a minha viagem!"
-                        </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
+                                    </form>
+
+                                </div>
+                            <!--</form>-->
+                        </div>
+                        <div class="col-sm-6 px-0 d-none d-sm-block">
+                            <img src="/img/torontopainting.jpeg" alt="Login image" class="w-100 vh-100"
+                                style="object-fit: cover; object-position: left;">
+                        </div>
                     </div>
                 </div>
-                <div class="text-center">
-                    <img class="img-fluid mx-auto" src="img/testimonial-2.jpg" style="width: 100px; height: 100px;">
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">"Minha viagem foi perfeita graças à equipe da agência de viagens. Eles me
-                            ajudaram a escolher o destino perfeito e
-                            me forneceram todas as informações necessárias para uma viagem tranquila."
-                        </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img class="img-fluid mx-auto" src="img/testimonial-3.jpg" style="width: 100px; height: 100px;">
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">"Fiquei muito satisfeito com o atendimento prestado pela agência de viagens.
-                            Eles foram muito
-                            prestativos e profissionais em todas as etapas do processo."
-                        </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img class="img-fluid mx-auto" src="img/testimonial-4.jpg" style="width: 100px; height: 100px;">
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">"Recomendo fortemente a agência de viagens para quem procura por uma viagem de
-                            qualidade.
-                            Eles oferecem ótimas opções de destinos e pacotes personalizados de acordo com as suas
-                            necessidades."
-                        </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img class="img-fluid mx-auto" src="img/testimonial-4.jpg" style="width: 100px; height: 100px;">
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">"Minha viagem foi incrível e não poderia ter sido melhor. Agradeço à equipe da
-                            agência de
-                            viagens por tornar isso possível!"
-                        </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img class="img-fluid mx-auto" src="img/testimonial-4.jpg" style="width: 100px; height: 100px;">
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">"A agência de viagens superou minhas expectativas. Eles cuidaram de tudo, desde
-                            o transporte
-                            até as reservas em hotéis e restaurantes, o que tornou a minha viagem muito mais agradável."
-                        </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img class="img-fluid mx-auto" src="img/testimonial-4.jpg" style="width: 100px; height: 100px;">
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">"Eu nunca tinha viajado para o exterior antes, mas a equipe da agência de
-                            viagens me fez sentir
-                            seguro e confiante em minha viagem. Eles me deram todas as informações necessárias e me
-                            ajudaram a planejar tudo com antecedência."
-                        </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img class="img-fluid mx-auto" src="img/testimonial-4.jpg" style="width: 100px; height: 100px;">
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">"Eu escolhi a agência de viagens porque eles oferecem pacotes exclusivos e
-                            personalizados.
-                            Não poderia ter feito uma escolha melhor. Minha viagem foi maravilhosa e muito além do que
-                            eu esperava."
-                        </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img class="img-fluid mx-auto" src="img/testimonial-4.jpg" style="width: 100px; height: 100px;">
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">"Agradeço à agência de viagens por me proporcionar uma viagem tão incrível. Eu
-                            pude
-                            experimentar novas culturas e lugares incríveis graças a eles."
-                        </p>
-                        <h5 class="text-truncate">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-            </div>
+            </section>
+
         </div>
     </div>
-    </div>
-    <!-- Testimonial End -->
+
+    <!-- LOGIN FORM END -->
+
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark py-5">
+    <div class="container-fluid bg-dark py-5 pt-mt-5">
         <div class="container pt-5 pb-3">
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
