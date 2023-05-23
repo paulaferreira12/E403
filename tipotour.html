@@ -223,7 +223,7 @@
           </div>
         </div>
         
-        
+        <!--
         <script>
         import { ref, watch } from 'vue'
         export default {
@@ -249,6 +249,7 @@
           }
         }
         </script>
+        -->
         <!--Botão mais / menos-->
 
         <div class="container-fluid py-5">
@@ -260,15 +261,15 @@
                             <div class="position-relative">
                                 <h4 style="display: flex; justify-content: center; align-items: center;">1 HORA --------- 60€</h4>
                                 <div class="align-items-center pt-2 pb-5" style="display: flex; justify-content: center; align-items: center;">
-                                    <a href="marcacaodata.html" class="btn btn-primary py-md-3 px-md-5 mt-2">Selecionar</a>
+                                    <button type="button" class="btn btn-primary py-md-3 px-md-5 mt-2" id="tuk1h">Selecionar</button>
                                 </div>
                                 <h4 style="display: flex; justify-content: center; align-items: center;">2 HORAS --------- 90€</h4>
                                 <div class="align-items-center pt-2 pb-5" style="display: flex; justify-content: center; align-items: center;">
-                                    <a href=".html" class="btn btn-primary py-md-3 px-md-5 mt-2">Selecionar</a>
+                                    <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2" id="tuk2h">Selecionar</a>
                                 </div>
                                 <h4 style="display: flex; justify-content: center; align-items: center;">3 HORAS --------- 120€</h4>
                                 <div class="align-items-center pt-2 pb-5" style="display: flex; justify-content: center; align-items: center;">
-                                    <a href=".html" class="btn btn-primary py-md-3 px-md-5 mt-2">Selecionar</a>
+                                    <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2" id="tuk3h">Selecionar</a>
                                 </div>
                             </div>
                             <div class="bg-white p-4 text-center">
@@ -284,15 +285,15 @@
                             <div class="position-relative">
                                 <h4 style="display: flex; justify-content: center; align-items: center;">1 HORA --------- 40€</h4>
                                 <div class="align-items-center pt-2 pb-5" style="display: flex; justify-content: center; align-items: center;">
-                                    <a href=".html" class="btn btn-primary py-md-3 px-md-5 mt-2">Selecionar</a>
+                                    <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2" id="pe1h" >Selecionar</a>
                                 </div>
                                 <h4 style="display: flex; justify-content: center; align-items: center;">2 HORAS --------- 70€</h4>
                                 <div class="align-items-center pt-2 pb-5" style="display: flex; justify-content: center; align-items: center;">
-                                    <a href=".html" class="btn btn-primary py-md-3 px-md-5 mt-2">Selecionar</a>
+                                    <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2" id="pe2h">Selecionar</a>
                                 </div>
                                 <h4 style="display: flex; justify-content: center; align-items: center;">3 HORAS --------- 100€</h4>
                                 <div class="align-items-center pt-2 pb-5" style="display: flex; justify-content: center; align-items: center;">
-                                    <a href=".html" class="btn btn-primary py-md-3 px-md-5 mt-2">Selecionar</a>
+                                    <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2" id="pe3h">Selecionar</a>
                                 </div>
                             </div>
                             <div class="bg-white p-4 text-center">
@@ -309,7 +310,7 @@
 
         <div class="container-fluid page-header pt-5">
             <div class="container py-5">
-                <div class="d-flex flex-column align-items-center mt-5" style="min-height: 400px">
+                <div class="d-flex flex-column align-items-center mt-5" style="min-height: 300px">
                     <!--<div class="d-inline-flex text-white">
                         <h2 class="text-left text-white mt-5 ml-1">Descubra os segredos do Porto! </h2>
                         <h2 class="text-right text-white mt-5 ml-5">Aprenda a sua história, cultura e tradições. </h2>
@@ -521,8 +522,9 @@
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+ 
+    <script src="js/tour.js"></script>
+    <script src="bd/tipoTour.js"></script>
 </body>
 
 </html>

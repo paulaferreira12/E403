@@ -7,4 +7,3 @@ pagamentos();
 reservas();
 tours();
 visitantes();
-<script type="module" src="./bd/localStorage.js"></script>

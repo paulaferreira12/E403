@@ -1,3 +1,5 @@
+
+
 (function ($) {
   "use strict";
 
@@ -116,21 +118,49 @@ function check() {
 /* End login*/
 
 /* local storage cidades*/
-let listaCidades = JSON.parse(localStorage.getItem("cidades"));
+let cidadesLista = JSON.parse(localStorage.getItem("cidades"));
 
-listaCidades.forEach(cidade => {
-  let html = '<div class="col-md-4 mb-4"> ' +
-    '<div class="destination-item position-relative overflow-hidden mb-2">' +
-    '<img class="img-fluid" src=" ' + cidade.imagem1 + ' " alt="">' +
-    '<a class="destination-overlay text-white text-decoration-none" href="">' +
-    '<h3 class="text-white"> ' + cidade.nome + ' </h4>' +
-    '</a>' +
-    '</div>' +
-    '</div>';
+cidadesLista.forEach(cidade => {
+  let html = `<div class="col-md-4 mb-4"> 
+    <div class="destination-item position-relative overflow-hidden mb-2"> 
+    <img class="img-fluid" src="${cidade.imagem1}" alt=""> 
+    <a class="destination-overlay text-white text-decoration-none cidade-${cidade.nome}">
+    <h3 class="text-white">${cidade.nome}</h4>
+    </a>
+    </div>
+    </div>`;
 
   document.getElementById("listaCidades").innerHTML += html;
-  //console.log(atividade.nome);
 });
+
+// Atribuir eventos de clique aos elementos <a> existentes
+cidadesLista.forEach(cidade => {
+  let cidadeLink = document.querySelector(`.cidade-${cidade.nome}`);
+  
+  cidadeLink.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    window.location.href = 'cidades.html?cidade=' + cidade.nome;
+    // Ou você pode redirecionar para uma página diferente com base na cidade clicada
+    // window.location.href = `pagina-cidade.html?cidade=${cidade.nome}`;
+  });
+});
+
+/*Ir buscar id do tipo de tour */
+/*let tipoTourBotao = document.getElementById("tipoTourBotao")
+
+tipoTourBotao.addEventListener("click", function () {
+  const urlParamsl = new URLSearchParams(window.location.search);
+  let tipoTour = urlParamsl.get("tour")
+
+  window.location.href = "marcacaodata.html?cidade=" + cidade.nome + "&tipoTour=" + tipoTour.nome;
+
+  alert(tipoTour)
+});*/
+
+
+//
+
 
 
 
