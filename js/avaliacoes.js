@@ -1,8 +1,7 @@
 let avaliacoesLista = JSON.parse(localStorage.getItem("avaliacoes"));
 
 avaliacoesLista.forEach(avaliacao => {
-    let html = `<div class="owl-item testimonial-carousel"
-    
+    let html = `
     <div class="text-center pb-4">
         <img class="img-fluid mx-auto" src="${avaliacao.imagem1}" style="width: 100px; height: 100px;" >
         <div class="testimonial-text bg-white p-4 mt-n5">
@@ -12,11 +11,18 @@ avaliacoesLista.forEach(avaliacao => {
             <span>${avaliacao.profissao}</span>
         </div>
     </div>
-    </div>
+    
     `;
 
     document.getElementById("listaAvaliacoes").innerHTML += html;
 });
+
+
+
+
+
+
+
 
 
 /*function criarDepoimentoElement(avaliacao) {

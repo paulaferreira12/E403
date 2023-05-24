@@ -37,6 +37,7 @@ let listaAvaliacoes = [{
     "profissao": "Estudante",
     "descricao": "Fiquei muito satisfeito com o atendimento prestado pela agência de viagens. Eles foram muito prestativos e profissionais em todas as etapas do processo.",
     "imagem1": "img/mirna.jpg",
-}]
+}
+]
 
 localStorage.setItem("avaliacoes", JSON.stringify(listaAvaliacoes));
