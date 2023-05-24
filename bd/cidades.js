@@ -67,7 +67,7 @@ let listaCidades = [{
     "imagem1": "img/Barcelona.jpg",
     "imagem2": "",
 },
-
+ 
 {
     "id": "7",
     "nome": "BUDAPESTE",

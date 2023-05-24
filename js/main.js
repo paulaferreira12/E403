@@ -180,7 +180,7 @@ tipoTourBotao.addEventListener("click", function () {
   function closePopup(popupId) {
     document.getElementById(popupId).style.display = "none";
   }
-
+ 
 /*Fim codigo do popup dos pagamentos*/
 
 /*Codigo para o email

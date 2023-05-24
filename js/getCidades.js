@@ -22,4 +22,4 @@ document.getElementById('inclui').innerText = atividade.inclui;
 document.getElementById('trazer').innerText = atividade.trazer;
 document.getElementById('preco').innerText = atividade.preco;
 document.getElementById('extra').innerText = atividade.extra;
-*/
+*/ 
