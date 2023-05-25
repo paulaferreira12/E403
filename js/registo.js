@@ -1,14 +1,18 @@
-let utilizador = JSON.parse(localStorage.getItem("utilizador")) || [];
+let visitante = JSON.parse(localStorage.getItem("visitantes")) || [];
 
-function registar(){
+function registar(event){
 
-    let name = document.getElementById('name').value;
+    event.preventDefault();
+   
+    let nome = document.getElementById('nome').value;
     let email = document.getElementById('email').value;
-    let username = document.getElementById('username').value;
-    let pw = document.getElementById('pw').value;
-    let lowerCaseLetters = /[a-z]/g;
+    let contacto = document.getElementById('contacto').value;
+    let password = document.getElementById('password').value;
+    let pais = document.getElementById('pais').value;
+    let profissao = document.getElementById('profissao').value;
+    /*let lowerCaseLetters = /[a-z]/g;
     let upperCaseLetters = /[A-Z]/g;
-    let numbers = /[0-9]/g;
+    let numbers = /[0-9]/g;*/
     let emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
     if(!emailValido){
@@ -16,39 +20,35 @@ function registar(){
         return;
     }
 
-    if(!name){
+    if(!nome){
         alert('Por favor, preencha o campo de nome');
         return;
     }
 
     // Verificar se o utilizador já existe
-    if(utilizador.some(u => u.username === username)){
-        alert('Já existe um utilizador com este nome de utilizador');
+    if(visitante.some(v => v.email === email)){
+        alert('Já se registou um visitante com esse email');
         return;
     }
 
-    if(utilizador.some(u => u.email === email)){
-        alert('Já existe um utilizador com este endereço de email');
-        return;
-      }
       
 
-    if (pw.length < 6 || !/\d/.test(pw)) {
+    if (password.length < 6 || !/\d/.test(password)) {
         alert("A senha deve ter pelo menos 6 caracteres e conter pelo menos 1 número.");
         return;
       }
       
 
-    // Validar outros campos do utilizador...
+    
 
-    let novo = {"role": "cliente", "nome": name, "email": email, "username": username, "password": pw}
-    utilizador.push(novo); 
-    localStorage.setItem("utilizador", JSON.stringify(utilizador));
+    let novo = { "nome": nome, "email": email, "contacto": contacto, "password": password, "pais": pais, "profissao": profissao}
+    visitante.push(novo); 
+    localStorage.setItem("visitantes", JSON.stringify(visitante));
     alert('A sua conta foi criada');
     window.location.href = "login.html";
 }
-
+console.log(document.getElementById("registar"))
 
 
 // Registar evento de clique no botão de registo 
-document.getElementById("registo").addEventListener("click", registar);
+document.getElementById("registar").addEventListener("click", registar);
