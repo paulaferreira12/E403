@@ -1,6 +1,6 @@
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const botaoLogin = document.getElementById('loginbtn');
+const email = document.getElementById('email').textContent;
+const password = document.getElementById('password').textContent;
+const botaoLogin = document.getElementById('loginbtn').textContent;
 
 
 botaoLogin.addEventListener('click', (event) =>{
