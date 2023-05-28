@@ -6,7 +6,7 @@ tuk1hBotao.addEventListener("click", function(event) {
     const urlParams = new URLSearchParams(window.location.search);
     let cidade = urlParams.get("cidade");
 
-    window.location.href = "marcacaodata.html?cidade=" + cidade + "&tipoTour=tuk1h";
+    window.location.href = "login1.html?cidade=" + cidade + "&tipoTour=tuk1h";
 
     alert("tuk1h"); // Você pode remover essa linha se quiser
 
@@ -18,7 +18,7 @@ tuk2hBotao.addEventListener("click", function(event) {
     const urlParams = new URLSearchParams(window.location.search);
     let cidade = urlParams.get("cidade");
 
-    window.location.href = "marcacaodata.html?cidade=" + cidade + "&tipoTour=tuk2h";
+    window.location.href = "login1.html?cidade=" + cidade + "&tipoTour=tuk2h";
 
 });
 
@@ -28,7 +28,7 @@ tuk3hBotao.addEventListener("click", function(event) {
     const urlParams = new URLSearchParams(window.location.search);
     let cidade = urlParams.get("cidade");
 
-    window.location.href = "marcacaodata.html?cidade=" + cidade + "&tipoTour=tuk3h";
+    window.location.href = "login1.html?cidade=" + cidade + "&tipoTour=tuk3h";
 
 });
 
@@ -38,7 +38,7 @@ pe1hBotao.addEventListener("click", function(event) {
     const urlParams = new URLSearchParams(window.location.search);
     let cidade = urlParams.get("cidade");
 
-    window.location.href = "marcacaodata.html?cidade=" + cidade + "&tipoTour=pe1h";
+    window.location.href = "login1.html?cidade=" + cidade + "&tipoTour=pe1h";
 
 });
 
@@ -48,7 +48,7 @@ pe2hBotao.addEventListener("click", function(event) {
     const urlParams = new URLSearchParams(window.location.search);
     let cidade = urlParams.get("cidade");
 
-    window.location.href = "marcacaodata.html?cidade=" + cidade + "&tipoTour=pe2h";
+    window.location.href = "login1.html?cidade=" + cidade + "&tipoTour=pe2h";
 
 });
 
@@ -58,7 +58,7 @@ pe3hBotao.addEventListener("click", function(event) {
     const urlParams = new URLSearchParams(window.location.search);
     let cidade = urlParams.get("cidade");
 
-    window.location.href = "marcacaodata.html?cidade=" + cidade + "&tipoTour=pe3h";
+    window.location.href = "login1.html?cidade=" + cidade + "&tipoTour=pe3h";
 
 });
 

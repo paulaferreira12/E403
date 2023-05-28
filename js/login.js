@@ -1,5 +1,6 @@
-const email = document.getElementById('email').textContent;
-const password = document.getElementById('password').textContent;
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+
 const botaoLogin = document.getElementById('loginbtn');
 
 //teste
@@ -8,8 +9,11 @@ const botaoLogin = document.getElementById('loginbtn');
 botaoLogin.addEventListener('click', (event) =>{
     event.preventDefault();
     const users = JSON.parse(localStorage.getItem('visitantes'));
-    const filtro = users.filter(post => post.email == email.value);
+    const filtro = users.filter(post => post.email === email.value);
     console.log(filtro)
+    console.log(users)
+    console.log(email)
+    console.log(password)
     if(filtro.lenght !== 0){
         if(password.value === filtro[0].password){
             localStorage.setItem("userLogado", JSON.stringify(filtro[0]));
@@ -21,3 +25,4 @@ botaoLogin.addEventListener('click', (event) =>{
         alert("Email não existe");
     }
 })
+

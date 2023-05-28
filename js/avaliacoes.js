@@ -1,8 +1,50 @@
-let avaliacoesLista = JSON.parse(localStorage.getItem("avaliacoes"));
+/*let avaliacoesLista = JSON.parse(localStorage.getItem("avaliacoes"));
+
 
 avaliacoesLista.forEach(avaliacao => {
     let html = `
-    <div class="text-center pb-4">
+    <div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="text-center pb-4">
+        <img class="img-fluid mx-auto" src="${avaliacao.imagem1}" style="width: 100px; height: 100px;">
+        <div class="testimonial-text bg-white p-4 mt-n5">
+          <p class="mt-5">${avaliacao.descricao}</p>
+          <h5 class="text-truncate">${avaliacao.nome}</h5>
+          <span>${avaliacao.profissao}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    `;
+
+    document.getElementById("listaAvaliacoes").innerHTML += html;
+});*/
+let avaliacoesLista = JSON.parse(localStorage.getItem("avaliacoes"));
+
+avaliacoesLista.forEach(avaliacao => {
+  let html = `
+    <div class="col-md-4">
+      <div class="text-center pb-4">
+        <img class="img-fluid mx-auto" src="${avaliacao.imagem1}" style="width: 100px; height: 100px;">
+        <div class="testimonial-text bg-white p-4 mt-n5">
+          <p class="mt-5">${avaliacao.descricao}</p>
+          <h5 class="text-truncate">${avaliacao.nome}</h5>
+          <span>${avaliacao.profissao}</span>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.querySelector("#listaAvaliacoes .row").innerHTML += html;
+});
+
+
+
+
+/*<div class="text-center pb-4">
         <img class="img-fluid mx-auto" src="${avaliacao.imagem1}" style="width: 100px; height: 100px;" >
         <div class="testimonial-text bg-white p-4 mt-n5">
             <p class="mt-5">"${avaliacao.descricao}"
@@ -10,15 +52,16 @@ avaliacoesLista.forEach(avaliacao => {
             <h5 class="text-truncate">${avaliacao.nome}</h5>
             <span>${avaliacao.profissao}</span>
         </div>
+    </div> */
+
+/*<div class="col-md-4 mb-4"> 
+    <div class="destination-item position-relative overflow-hidden mb-2"> 
+        <img class="img-fluid" src="${cidade.imagem1}" alt=""> 
+        <a class="destination-overlay text-white text-decoration-none cidade-${cidade.nome}">
+        <h3 class="text-white">${cidade.nome}</h4>
+        </a>
     </div>
-    
-    `;
-
-    document.getElementById("listaAvaliacoes").innerHTML += html;
-});
-
-
-
+</div>*/
 
 
 

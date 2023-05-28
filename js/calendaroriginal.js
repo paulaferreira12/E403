@@ -250,10 +250,10 @@ function updateEvents(date) {
         events += `<div class="event">
             <div class="title">
               <i class="fas fa-circle"></i>
-              <h3 class="event-title">RESERVADO</h3>
+              <h3 class="event-title">${event.title}</h3>
             </div>
             <div class="event-time">
-              <span class="event-time">${event.horaInicio}</span>
+              <span class="event-time">${event.time}</span>
             </div>
         </div>`;
       });
@@ -284,9 +284,9 @@ document.addEventListener("click", (e) => {
 });
 
 //allow 50 chars in eventtitle
-/*addEventTitle.addEventListener("input", (e) => {
+addEventTitle.addEventListener("input", (e) => {
   addEventTitle.value = addEventTitle.value.slice(0, 60);
-});*/
+});
 
 function defineProperty() {
   var osccred = document.createElement("div");
@@ -317,7 +317,7 @@ addEventFrom.addEventListener("input", (e) => {
   }
 });
 
-/*addEventTo.addEventListener("input", (e) => {
+addEventTo.addEventListener("input", (e) => {
   addEventTo.value = addEventTo.value.replace(/[^0-9:]/g, "");
   if (addEventTo.value.length === 2) {
     addEventTo.value += ":";
@@ -325,82 +325,58 @@ addEventFrom.addEventListener("input", (e) => {
   if (addEventTo.value.length > 5) {
     addEventTo.value = addEventTo.value.slice(0, 5);
   }
-});*/
+});
 
 //function to add event to eventsArr
 addEventSubmit.addEventListener("click", () => {
   //const eventTitle = addEventTitle.value;
   const eventTimeFrom = addEventFrom.value;
   //const eventTimeTo = addEventTo.value;
-  if (eventTimeFrom === "") {
+  if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
     alert("Please fill all the fields");
     return;
   }
 
   //check correct time format 24 hour
   const timeFromArr = eventTimeFrom.split(":");
-  //const timeToArr = eventTimeTo.split(":");
+  const timeToArr = eventTimeTo.split(":");
   if (
     timeFromArr.length !== 2 ||
-    //timeToArr.length !== 2 ||
+    timeToArr.length !== 2 ||
     timeFromArr[0] > 23 ||
-    timeFromArr[1] > 59 
-    //timeToArr[0] > 23 ||
-    //timeToArr[1] > 59
+    timeFromArr[1] > 59 ||
+    timeToArr[0] > 23 ||
+    timeToArr[1] > 59
   ) {
     alert("Invalid Time Format");
     return;
   }
 
   const timeFrom = convertTime(eventTimeFrom);
-  //const timeTo = convertTime(eventTimeTo);
+  const timeTo = convertTime(eventTimeTo);
 
   //check if event is already added
   let eventExist = false;
-  /*eventsArr.forEach((event) => {
+  eventsArr.forEach((event) => {
     if (
       event.day === activeDay &&
       event.month === month + 1 &&
       event.year === year
     ) {
-      //event.events.forEach((event) => {
-       // if (event.title === eventTitle) {
-          //eventExist = true;
-        //}
-      //});
+      event.events.forEach((event) => {
+        if (event.title === eventTitle) {
+          eventExist = true;
+        }
+      });
     }
-  });*/
-
+  });
   if (eventExist) {
     alert("Event already added");
     return;
   }
-
-let email = (JSON.parse(localStorage.getItem("userLogado"))).email;
-console.log(email);
-
-const urlParams = new URLSearchParams(window.location.search);
-const cidade = urlParams.get('cidade'); //Vai ao url buscar a cidade
-
-const nome = urlParams.get('tipoTour');
-let listaTours = JSON.parse(localStorage.getItem("tour"));
-const tipo1 = listaTours.find((objeto) => objeto.nome === nome);
-let duracao = tipo1.duracao;
-let preco = tipo1.preco;
-let meiot = tipo1.tipo;
-
-
-
   const newEvent = {
-    //title: eventTitle,
-    emailvis: email,
-    cidade: cidade,
-    nome: nome,
-    tipo: meiot,
-    preco : preco,
-    horaInicio : timeFrom /*+ " - " + */, 
-    horaFim: duracao/*convertTime(duracao)*/,
-
+    title: eventTitle,
+    time: timeFrom + " - " + timeTo,
   };
   console.log(newEvent);
   console.log(activeDay);
@@ -429,14 +405,14 @@ let meiot = tipo1.tipo;
 
   console.log(eventsArr);
   addEventWrapper.classList.remove("active");
-  //addEventTitle.value = "";
+  addEventTitle.value = "";
   addEventFrom.value = "";
-  //addEventTo.value = "";
+  addEventTo.value = "";
   updateEvents(activeDay);
   //select active day and add event class if not added
   const activeDayEl = document.querySelector(".day.active");
-  if (!activeDayEl.classList.contains("reservas")) {
-    activeDayEl.classList.add("reservas");
+  if (!activeDayEl.classList.contains("event")) {
+    activeDayEl.classList.add("event");
   }
 });
 
@@ -474,16 +450,16 @@ eventsContainer.addEventListener("click", (e) => {
 
 //function to save events in local storage
 function saveEvents() {
-  localStorage.setItem("reservasTemp", JSON.stringify(eventsArr));
+  localStorage.setItem("events", JSON.stringify(eventsArr));
 }
 
 //function to get events from local storage
 function getEvents() {
   //check if events are already saved in local storage then return event else nothing
-  if (localStorage.getItem("reservas") === null) {
+  if (localStorage.getItem("events") === null) {
     return;
   }
-  eventsArr.push(...JSON.parse(localStorage.getItem("reservas")));
+  eventsArr.push(...JSON.parse(localStorage.getItem("events")));
 }
 
 function convertTime(time) {
