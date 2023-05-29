@@ -75,6 +75,7 @@
 /* Back to top button */
 
 /* Tentativa de log in*/
+/*
 function store() {
 
   var email = document.getElementById('email');
@@ -113,7 +114,7 @@ function check() {
   } else {
     alert('Error on login');
   }
-}
+}*/
 
 /* End login*/
 

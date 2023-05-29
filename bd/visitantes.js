@@ -16,5 +16,10 @@ let visitantes = [{
     pais: "portugal",
     profissao: "aaaaaa"
 }]
-localStorage.setItem("visitantes", JSON.stringify(visitantes));
+
+
+if (localStorage.getItem("visitantes") != null) {
+    localStorage.setItem("visitantes", JSON.stringify(visitantes))
+
+}
 //funçao que tem no fim de todos os js da bd

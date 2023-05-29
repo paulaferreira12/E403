@@ -51,4 +51,4 @@ console.log(document.getElementById("registar"))
 
 
 // Registar evento de clique no botão de registo 
-document.getElementById("registar").addEventListener("click", registar);
+document.getElementById("registar").addEventListener("click", registar());

@@ -155,8 +155,9 @@
                       <div id="success"></div>
                       <form name="sentMessage" id="contactForm" novalidate="novalidate">
                         <div class="form-row">
+                          <!--
                           <div class="control-group col-sm-6">
-                            <input type="text" class="form-control p-4" id="name" placeholder="Nome" required="required"
+                            <input type="text" class="form-control p-4" id="nome" placeholder="Nome" required="required"
                               data-validation-required-message="Please enter your name" />
                             <p class="help-block text-danger"></p>
                           </div>
@@ -165,14 +166,15 @@
                               required="required" data-validation-required-message="Please enter your email" />
                             <p class="help-block text-danger"></p>
                           </div>
+                          -->
                         </div>
                         <div class="control-group">
-                          <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="A sua avaliação"
+                          <textarea class="form-control py-3 px-4" rows="5" id="avaliacao" placeholder="A sua avaliação"
                             required="required" data-validation-required-message="Please enter your message"></textarea>
                           <p class="help-block text-danger"></p>
                         </div>
                         <div class="text-center">
-                          <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Enviar</button>
+                          <button class="btn btn-primary py-3 px-4" type="submit" id="enviarAv">Enviar</button>
                           <button class="btn btn-primary py-3 px-4" onclick="closePopup('popup1')">Fechar</button>
                         </div>
                         
