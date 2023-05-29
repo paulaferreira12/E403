@@ -25,15 +25,18 @@ logout.addEventListener('click', ()=> {
 
 let avaliacao = JSON.parse(localStorage.getItem("avaliacoes")) || [];
 
-function inserirAv(event){
+function enviarAv(event){
 
-    event.preventDefault();
+    //event.preventDefault();
    
-    let av = document.getElementById('avaliacao').value;
+    let av = document.getElementById('av').value;
+    let nome = localStorage.userLg.nome;
+    let profissao = localStorage.userLg.profissao;
+    let foto = "img\mirna.jpg";
 
     
 
-    let novaAv = { "nome": nome, "email": email, "contacto": contacto, "password": password, "pais": pais, "profissao": profissao}
+    let novaAv = { "nome": nome, "profissao": profissao, "av": av, "foto": foto}
     avaliacao.push(novaAv); 
     localStorage.setItem("avaliacoes", JSON.stringify(avaliacao));
     alert('A sua avaliação foi registada');
@@ -42,4 +45,4 @@ function inserirAv(event){
 
 
 // Registar evento de clique no botão de registo 
-document.getElementById("enviarAv").addEventListener("click", inserirAv);
+document.getElementById("enviarAv").addEventListener("click", enviarAv());

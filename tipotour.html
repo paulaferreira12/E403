@@ -203,54 +203,6 @@
         </div>
     </div>
     
-    <div class="container-fluid py-1 pb-4">
-        <div class="container pt-5 pb-1">
-            <div class="text-center pt-4" style="font-weight: lighter;">
-                <h3>Com quantas pessoas pretende realizar o tour?</h3>
-            </div>
-        </div>
-    </div>
-
-    <!--Botão mais / menos-->
-    
-        <div class="input-group mb-3 pb-5" style="width: 15%; margin: auto;">
-          <div class="input-group-prepend">
-            <button class="btn btn-outline-danger" type="button" @click="subs">-</button>
-          </div>
-          <input type="text" class="form-control" :value="inputValue" readonly>
-          <div class="input-group-append">
-            <button class="btn btn-outline-success" type="button" @click="add">+</button>
-          </div>
-        </div>
-        
-        <!--
-        <script>
-        import { ref, watch } from 'vue'
-        export default {
-          props: {
-            value: { type: Number, default: 0 },
-            min: { type: Number, default: 0 },
-            max: { type: Number, default: 9999999 }
-          },
-          setup (props, ctx) {
-            const inputValue = ref(props.value)
-            watch(inputValue, () => { ctx.emit('input', inputValue.value) })
-            const add = () => {
-              if (inputValue.value < props.max) { inputValue.value++ }
-            }
-            const subs = () => {
-              if (inputValue.value > props.min) { inputValue.value-- }
-            }
-            return {
-              inputValue,
-              add,
-              subs
-            }
-          }
-        }
-        </script>
-        -->
-        <!--Botão mais / menos-->
 
         <div class="container-fluid py-5">
             <div class="container pt-5 pb-3">

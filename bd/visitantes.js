@@ -22,4 +22,6 @@ if (localStorage.getItem("visitantes") != null) {
     localStorage.setItem("visitantes", JSON.stringify(visitantes))
 
 }
+//localStorage.setItem("visitantes", JSON.stringify(visitantes))
+
 //funçao que tem no fim de todos os js da bd

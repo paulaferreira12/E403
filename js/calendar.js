@@ -331,6 +331,7 @@ addEventFrom.addEventListener("input", (e) => {
 addEventSubmit.addEventListener("click", () => {
   //const eventTitle = addEventTitle.value;
   const eventTimeFrom = addEventFrom.value;
+  window.location.href = 'pagamento.html'
   //const eventTimeTo = addEventTo.value;
   if (eventTimeFrom === "") {
     alert("Please fill all the fields");
@@ -399,7 +400,7 @@ let meiot = tipo1.tipo;
     tipo: meiot,
     preco : preco,
     horaInicio : timeFrom /*+ " - " + */, 
-    horaFim: duracao/*convertTime(duracao)*/,
+    horaFim: timeFrom + convertTime(duracao),
 
   };
   console.log(newEvent);
