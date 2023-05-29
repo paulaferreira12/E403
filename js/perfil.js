@@ -23,20 +23,21 @@ logout.addEventListener('click', ()=> {
 })
 
 
-let avaliacao = JSON.parse(localStorage.getItem("avaliacoes")) || [];
+/*let avaliacao = JSON.parse(localStorage.getItem("avaliacoes")) || [];
 
 function enviarAv(event){
 
     //event.preventDefault();
    
-    let av = document.getElementById('av').value;
-    let nome = localStorage.userLg.nome;
-    let profissao = localStorage.userLg.profissao;
+    let av = document.getElementById('av');
+    //let av = localStorage.getItem('av');
+    let nome = document.getElementById('nome');
+    let profissao = document.getElementById('profissao');
     let foto = "img\mirna.jpg";
 
     
 
-    let novaAv = { "nome": nome, "profissao": profissao, "av": av, "foto": foto}
+    let novaAv = { "descricao": av, "nome": nome, "profissao": profissao, "imagem1": foto}
     avaliacao.push(novaAv); 
     localStorage.setItem("avaliacoes", JSON.stringify(avaliacao));
     alert('A sua avaliação foi registada');
@@ -45,4 +46,24 @@ function enviarAv(event){
 
 
 // Registar evento de clique no botão de registo 
-document.getElementById("enviarAv").addEventListener("click", enviarAv());
+document.getElementById("enviarAv").addEventListener("click", enviarAv());*/
+
+let avaliacao = JSON.parse(localStorage.getItem("avaliacoes")) || [];
+
+function enviarAv(event) {
+    // event.preventDefault();
+   
+    let av = document.getElementById('av').value;
+    //let nome = document.getElementById('nome').value;
+    let nome = userLg.nome
+    let profissao = userLg.profissao;
+    let foto = "img/mirna.jpg";
+
+    let novaAv = {"nome": nome, "profissao": profissao, "descricao": av, "imagem1": foto }
+    avaliacao.push(novaAv); 
+    localStorage.setItem("avaliacoes", JSON.stringify(avaliacao));
+    alert('A sua avaliação foi registada');
+}
+
+// Register event listener for the click event
+document.getElementById("enviarAv").addEventListener("click", enviarAv);
