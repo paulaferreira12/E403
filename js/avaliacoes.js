@@ -1,27 +1,74 @@
-/*let avaliacoesLista = JSON.parse(localStorage.getItem("avaliacoes"));
+(function ($) {
+  "use strict";
+
+  // Dropdown on mouse hover
+  $(document).ready(function () {
+    function toggleNavbarMethod() {
+      if ($(window).width() > 992) {
+        $('.navbar .dropdown').on('mouseover', function () {
+          $('.dropdown-toggle', this).trigger('click');
+        }).on('mouseout', function () {
+          $('.dropdown-toggle', this).trigger('click').blur();
+        });
+      } else {
+        $('.navbar .dropdown').off('mouseover').off('mouseout');
+      }
+    }
+    toggleNavbarMethod();
+    $(window).resize(toggleNavbarMethod);
+  });
 
 
-avaliacoesLista.forEach(avaliacao => {
-    let html = `
-    <div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="text-center pb-4">
-        <img class="img-fluid mx-auto" src="${avaliacao.imagem1}" style="width: 100px; height: 100px;">
-        <div class="testimonial-text bg-white p-4 mt-n5">
-          <p class="mt-5">${avaliacao.descricao}</p>
-          <h5 class="text-truncate">${avaliacao.nome}</h5>
-          <span>${avaliacao.profissao}</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-    `;
+  // Back to top button
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $('.back-to-top').fadeIn('slow');
+    } else {
+      $('.back-to-top').fadeOut('slow');
+    }
+  });
+  $('.back-to-top').click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+    return false;
+  });
 
-    document.getElementById("listaAvaliacoes").innerHTML += html;
-});*/
+
+  // Date and time picker
+  $('.date').datetimepicker({
+    format: 'L'
+  });
+  $('.time').datetimepicker({
+    format: 'LT'
+  });
+
+
+  // Testimonials carousel
+  $(".testimonial-carousel").owlCarousel({
+    autoplay: true,
+    smartSpeed: 1500,
+    margin: 30,
+    dots: true,
+    loop: true,
+    center: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      576: {
+        items: 1
+      },
+      768: {
+        items: 2
+      },
+      992: {
+        items: 3
+      }
+    }
+  });
+
+})(jQuery);
+
+
 let avaliacoesLista = JSON.parse(localStorage.getItem("avaliacoes"));
 
 avaliacoesLista.forEach(avaliacao => {
@@ -40,29 +87,6 @@ avaliacoesLista.forEach(avaliacao => {
 
   document.querySelector("#listaAvaliacoes .row").innerHTML += html;
 });
-
-
-
-
-/*<div class="text-center pb-4">
-        <img class="img-fluid mx-auto" src="${avaliacao.imagem1}" style="width: 100px; height: 100px;" >
-        <div class="testimonial-text bg-white p-4 mt-n5">
-            <p class="mt-5">"${avaliacao.descricao}"
-            </p>
-            <h5 class="text-truncate">${avaliacao.nome}</h5>
-            <span>${avaliacao.profissao}</span>
-        </div>
-    </div> */
-
-/*<div class="col-md-4 mb-4"> 
-    <div class="destination-item position-relative overflow-hidden mb-2"> 
-        <img class="img-fluid" src="${cidade.imagem1}" alt=""> 
-        <a class="destination-overlay text-white text-decoration-none cidade-${cidade.nome}">
-        <h3 class="text-white">${cidade.nome}</h4>
-        </a>
-    </div>
-</div>*/
-
 
 
 

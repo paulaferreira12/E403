@@ -1,10 +1,81 @@
+(function ($) {
+  "use strict";
+
+  // Dropdown on mouse hover
+  $(document).ready(function () {
+    function toggleNavbarMethod() {
+      if ($(window).width() > 992) {
+        $('.navbar .dropdown').on('mouseover', function () {
+          $('.dropdown-toggle', this).trigger('click');
+        }).on('mouseout', function () {
+          $('.dropdown-toggle', this).trigger('click').blur();
+        });
+      } else {
+        $('.navbar .dropdown').off('mouseover').off('mouseout');
+      }
+    }
+    toggleNavbarMethod();
+    $(window).resize(toggleNavbarMethod);
+  });
+
+
+  // Back to top button
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $('.back-to-top').fadeIn('slow');
+    } else {
+      $('.back-to-top').fadeOut('slow');
+    }
+  });
+  $('.back-to-top').click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+    return false;
+  });
+
+
+  // Date and time picker
+  $('.date').datetimepicker({
+    format: 'L'
+  });
+  $('.time').datetimepicker({
+    format: 'LT'
+  });
+
+
+  // Testimonials carousel
+  $(".testimonial-carousel").owlCarousel({
+    autoplay: true,
+    smartSpeed: 1500,
+    margin: 30,
+    dots: true,
+    loop: true,
+    center: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      576: {
+        items: 1
+      },
+      768: {
+        items: 2
+      },
+      992: {
+        items: 3
+      }
+    }
+  });
+
+})(jQuery);
+
+
+
 const userLg = JSON.parse(localStorage.getItem('userLogado'));
 
 const nome = document.getElementById('nome');
 nome.innerHTML = userLg.nome;
 
 const email = document.getElementById('email');
-console.log(email)
 email.innerHTML = userLg.email;
 
 const contacto = document.getElementById('contacto');
@@ -19,6 +90,7 @@ profissao.innerHTML = userLg.profissao;
 const logout = document.getElementById('logout');
 logout.addEventListener('click', ()=> {
     localStorage.removeItem('userLogado');
+    //localStorage.setItem("avaliacoes", JSON.stringify(avaliacoes));
     window.location.href = 'index.html';
 })
 
@@ -51,13 +123,18 @@ document.getElementById("enviarAv").addEventListener("click", enviarAv());*/
 let avaliacao = JSON.parse(localStorage.getItem("avaliacoes")) || [];
 
 function enviarAv(event) {
-    // event.preventDefault();
+    event.preventDefault();
    
     let av = document.getElementById('av').value;
     //let nome = document.getElementById('nome').value;
     let nome = userLg.nome
     let profissao = userLg.profissao;
-    let foto = "img/mirna.jpg";
+    let foto = "img/user.png";
+
+    if (av.length < 5) {
+        alert('A avaliação deve ter pelo menos 5 caracteres!');
+        return;
+    }
 
     let novaAv = {"nome": nome, "profissao": profissao, "descricao": av, "imagem1": foto }
     avaliacao.push(novaAv); 
@@ -67,3 +144,50 @@ function enviarAv(event) {
 
 // Register event listener for the click event
 document.getElementById("enviarAv").addEventListener("click", enviarAv);
+
+
+function openPopup(popupId) {
+    document.getElementById(popupId).style.display = "block";
+  }
+  
+  function closePopup(popupId) {
+    document.getElementById(popupId).style.display = "none";
+  }
+ 
+
+let reservas1 = JSON.parse(localStorage.getItem("reservas"));
+
+reservas1.forEach(reserva => {
+  let html = `
+  <div class="row">
+  <div class="col-md-12">
+    <div class="card mb-4 mb-md-0">
+      <div class="card-body">
+        <p class="mb-2" style="font-size:x-large;"><span class="text-primary font-italic me-1"></span><strong>
+            Reserva</strong></p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="destination-item position-relative overflow-hidden mb-2">
+            <img class="img-fluid" src="img/porto.jpg" alt="">
+              <a class="destination-overlay text-white text-decoration-none" >
+                <h3 class="text-white">${reserva.cidade}</h3>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-center">
+            <div class="pl-3">
+              <p style="font-size:larger;"><strong>Tipo de tour:</strong> ${reserva.tipo}</p>
+              <p style="font-size:larger;"><strong>Hora de inicio:</strong> ${reserva.horainicio}</p>
+              <p style="font-size:larger;"><strong>Guia:</strong> Rui Fernandes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  `;
+  console.log(reserva.tipo)
+
+  document.querySelector("#reservas .row").innerHTML += html;
+});

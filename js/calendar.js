@@ -400,7 +400,7 @@ let meiot = tipo1.tipo;
     tipo: meiot,
     preco : preco,
     horaInicio : timeFrom /*+ " - " + */, 
-    horaFim: timeFrom + convertTime(duracao),
+    horaFim: adicionarHoras(timeFrom, duracao),
 
   };
   console.log(newEvent);
@@ -497,3 +497,46 @@ function convertTime(time) {
   time = timeHour + ":" + timeMin + " " + timeFormat;
   return time;
 }
+
+
+/*function adicionarHoras(timeFrom, duracao) {
+  // Extrai a hora e os minutos da string
+  const [horaAtual, minutosAtual] = timeFrom.split(':');
+
+  // Converte a hora e os minutos em números
+  const horaNumerica = parseInt(horaAtual, 10);
+  const minutosNumerico = parseInt(minutosAtual, 10);
+
+  // Calcula a nova hora adicionando as horas fornecidas
+  const novaHoraNumerica = horaNumerica + duracao;
+
+  // Calcula os novos valores da hora e dos minutos
+  const novaHora = (novaHoraNumerica % 24).toString().padStart(2, '0');
+  const novosMinutos = minutosNumerico.toString().padStart(2, '0');
+
+  // Retorna a nova hora formatada
+  return `${novaHora}:${novosMinutos}h`;
+}*/
+
+function adicionarHoras(timeFrom, duracao) {
+  const [horaAtual, minutosAtual] = timeFrom.split(':');
+
+  let novaHoraNumerica = parseInt(horaAtual, 10);
+  let novosMinutosNumerico = parseInt(minutosAtual, 10);
+
+  novaHoraNumerica += Math.floor(duracao);
+  novosMinutosNumerico += (duracao % 1) * 60;
+
+  if (novosMinutosNumerico >= 60) {
+    novaHoraNumerica += Math.floor(novosMinutosNumerico / 60);
+    novosMinutosNumerico %= 60;
+  }
+
+  novaHoraNumerica %= 24;
+
+  const novaHora = novaHoraNumerica.toString().padStart(2, '0');
+  const novosMinutos = novosMinutosNumerico.toString().padStart(2, '0');
+
+  return `${novaHora}:${novosMinutos}h`;
+}
+
