@@ -70,8 +70,7 @@
 
 
 let visitante = JSON.parse(localStorage.getItem("visitantes")) || [];
-
-function registar(event){
+document.getElementById("registar").addEventListener("click", (event) =>{
 
     event.preventDefault();
    
@@ -117,9 +116,8 @@ function registar(event){
     localStorage.setItem("visitantes", JSON.stringify(visitante));
     alert('A sua conta foi criada');
     window.location.href = "login.html";
-}
+})  
 console.log(document.getElementById("registar"))
 
 
 // Registar evento de clique no botão de registo 
-document.getElementById("registar").addEventListener("click", registar());

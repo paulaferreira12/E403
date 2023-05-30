@@ -156,8 +156,11 @@ function openPopup(popupId) {
  
 
 let reservas1 = JSON.parse(localStorage.getItem("reservas"));
+let cidadesLista = JSON.parse(localStorage.getItem("cidades"));
+let user = JSON.parse(localStorage.getItem("userLogado"));
+let reservas2 = reservas1.filter(post => post.events[0].emailvis === user.email);
 
-reservas1.forEach(reserva => {
+reservas2.forEach(reserva => {
   let html = `
   <div class="row">
   <div class="col-md-12">
@@ -166,19 +169,20 @@ reservas1.forEach(reserva => {
         <p class="mb-2" style="font-size:x-large;"><span class="text-primary font-italic me-1"></span><strong>
             Reserva</strong></p>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-7">
             <div class="destination-item position-relative overflow-hidden mb-2">
             <img class="img-fluid" src="img/porto.jpg" alt="">
               <a class="destination-overlay text-white text-decoration-none" >
-                <h3 class="text-white">${reserva.cidade}</h3>
+                <h3 class="text-white">${reserva.events[0].cidade}</h3>
               </a>
             </div>
           </div>
-          <div class="col-md-6 d-flex align-items-center">
-            <div class="pl-3">
-              <p style="font-size:larger;"><strong>Tipo de tour:</strong> ${reserva.tipo}</p>
-              <p style="font-size:larger;"><strong>Hora de inicio:</strong> ${reserva.horainicio}</p>
-              <p style="font-size:larger;"><strong>Guia:</strong> Rui Fernandes</p>
+          <div class="col-md-5 d-flex align-items-center">
+            <div class="">
+              <p style="font-size:large;"><strong>Tipo de tour:</strong> ${reserva.events[0].tipo}</p>
+              <p style="font-size:large;"><strong>Hora de inicio:</strong> ${reserva.events[0].horaInicio}</p>
+              <p style="font-size:large;"><strong>Preço: </strong> ${reserva.events[0].preco} <strong> €.</strong></p>
+              <p style="font-size:large;"><strong>Guia:</strong> Rui Fernandes</p>
             </div>
           </div>
         </div>
