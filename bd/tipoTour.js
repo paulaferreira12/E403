@@ -2,7 +2,7 @@ let tipoTour = [{
     "id": "0",
     "nome": "tuk1h",
     "tipo": "tuk-tuk",
-    "duracao": "1h",
+    "duracao": "01:00",
     "preco": "60",
 },
 
@@ -10,7 +10,7 @@ let tipoTour = [{
     "id": "1",
     "nome": "tuk2h",
     "tipo": "tuk-tuk",
-    "duracao": "2h",
+    "duracao": "02:00",
     "preco": "90",
 },
 
@@ -18,7 +18,7 @@ let tipoTour = [{
     "id": "2",
     "nome": "tuk3h",
     "tipo": "tuk-tuk",
-    "duracao": "3h",
+    "duracao": "03:00",
     "preco": "120",
 },
 
@@ -26,7 +26,7 @@ let tipoTour = [{
     "id": "3",
     "nome": "pe1h",
     "tipo": "pe",
-    "duracao": "1h",
+    "duracao": "01:00",
     "preco": "40",
 
 },
@@ -36,7 +36,7 @@ let tipoTour = [{
     "id": "4",
     "nome": "pe2h",
     "tipo": "pe",
-    "duracao": "2h",
+    "duracao": "02:00",
     "preco": "70",
 },
 
@@ -44,7 +44,7 @@ let tipoTour = [{
     "id": "5",
     "nome": "pe3h",
     "tipo": "pe",
-    "duracao": "3h",
+    "duracao": "03:00",
     "preco": "100",
 }]
 

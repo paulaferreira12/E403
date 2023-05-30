@@ -1,5 +1,5 @@
 let visitantes = [{
-    id: "v1",
+    id: "0",
     nome: "João Coelho",
     email: "aa@email.com",
     contacto: "911911911",
@@ -8,7 +8,7 @@ let visitantes = [{
     profissao: "calceteiro",
 },
 {
-    id: "v2",
+    id: "1",
     nome: "João Fernandes",
     email: "bb@email.com",
     contacto: "921911911",
@@ -16,5 +16,12 @@ let visitantes = [{
     pais: "portugal",
     profissao: "aaaaaa"
 }]
-localStorage.setItem("visitantes", JSON.stringify(visitantes));
+
+
+if (localStorage.getItem("visitantes") != null) {
+    localStorage.setItem("visitantes", JSON.stringify(visitantes))
+
+}
+//localStorage.setItem("visitantes", JSON.stringify(visitantes))
+
 //funçao que tem no fim de todos os js da bd

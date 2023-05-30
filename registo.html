@@ -144,52 +144,65 @@
 
                             <!--<form onsubmit="loginFunc()">-->
 
-                                <div
-                                    class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+                            <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-                                    <form style="width: 23rem;">
+                                <form style="width: 23rem;">
 
-                                        <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"></h3>
-                                        <a href="" class="navbar-brand">
-                                            <h1 class="m-0 text-primary"
-                                                style="display: flex; justify-content: center; align-items: center; height: 20vh;">
-                                                <span class="text-dark">Explore</span>Makers
-                                            </h1>
-                                        </a>
-
-                                        <div class="form-outline mb-4">
-                                            <input type="email" id="email" class="form-control form-control-lg" placeholder="Introduza o email"/>
-                                            <!--<label class="form-label" >Endereço de Email</label>-->
-                                        </div>
-
-                                        <div class="form-outline mb-4">
-                                            <input type="password" id="password" class="form-control form-control-lg" placeholder="Introduza a password"/>
-                                            <!--<label class="form-label" for="form2Example28">Password</label>-->
-                                        </div>
-
-                                        <div class="pt-1 mb-4">
-                                            <a href="login.html"><button id="rgstr_btn" class="btn btn-primary btn-lg btn-block"
-                                                    type="button submit" value="Registar">Registar</button></a>
-                                                    <!--<p id="result">Welcome, Login...</p>-->
-                                        </div>
-
-                                        <p class="small mb-5 pb-lg-2"><u><a class="text-muted" href="#!">Forgot
-                                                    password?</a></u></p>
+                                    <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"></h3>
+                                    <a href="" class="navbar-brand">
+                                        <h1 class="m-0 text-primary"
+                                            style="display: flex; justify-content: center; align-items: center; height: 20vh;">
+                                            <span class="text-dark text-center">Explore</span>Makers
+                                        </h1>
+                                    </a>
 
 
-                                    </form>
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="nome" class="form-control form-control-lg"
+                                            placeholder="Introduza o seu nome" />
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="email" id="email" class="form-control form-control-lg"
+                                            placeholder="Introduza o email" />
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="number" id="contacto" class="form-control form-control-lg"
+                                            placeholder="Introduza o seu contacto" />
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="pais" class="form-control form-control-lg"
+                                            placeholder="Introduza o seu pais" />
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="profissao" class="form-control form-control-lg"
+                                            placeholder="Introduza a sua profissao" />
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="password" id="password" class="form-control form-control-lg"
+                                            placeholder="Defina uma password" />
+                                    </div>
 
-                                </div>
+                                    <div class="pt-1 mb-4">
+                                        <button class="btn btn-primary btn-lg btn-block" type="button submit" id="registar" value="Registar">Registar</button>
+                                    </div>
+
+                                    <p class="small mb-5 pb-lg-2"><u><a class="text-muted"
+                                                href="Termos e Condições ExploreMakers.pdf" target="_blank">Termos e
+                                                Condições</a></u></p>
+
+
+                                </form>
+
+                            </div>
                             <!--</form>-->
                         </div>
-                        <div class="col-sm-6 px-0 d-none d-sm-block">
+                        <div class="col-sm-6 px-0 d-none d-md-block">
                             <img src="/img/torontopainting.jpeg" alt="Login image" class="w-100 vh-100"
                                 style="object-fit: cover; object-position: left;">
                         </div>
                     </div>
                 </div>
             </section>
-
         </div>
     </div>
 
@@ -292,12 +305,11 @@
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+ 
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <!--<script src="js/main.js"></script>-->
+    <script src="js/registo.js"></script>
 </body>
 
 </html>

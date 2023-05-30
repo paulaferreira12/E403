@@ -68,27 +68,40 @@
   
   })(jQuery);
 
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-
-const botaoLogin = document.getElementById('loginbtn');
-
-//teste
 
 
-botaoLogin.addEventListener('click', (event) =>{
-    event.preventDefault();
-    const users = JSON.parse(localStorage.getItem('visitantes'));
-    const filtro = users.filter(post => post.email === email.value);
-    if(filtro.lenght !== 0){
-        if(password.value === filtro[0].password){
-            localStorage.setItem("userLogado", JSON.stringify(filtro[0]));
-            window.location.href = 'perfil.html';
-        }else{
-            alert('Senha Invalida');
-        }
-    }else{
-        alert("Email não existe");
-    }
-})
+let guiasLista = JSON.parse(localStorage.getItem("guias"));
 
+guiasLista.forEach(guia => {
+  let html = `
+  <div class="col-lg-4 col-md-6 mb-4">
+              <div class="destination-item position-relative overflow-hidden mb-2">
+                  <!---->
+                  
+                      <div class="team-item bg-white mb-4">
+                          <div class="team-img position-relative overflow-hidden">
+                              <img class="img-fluid w-100" src="img/team-1.jpg" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                  <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                  <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                  <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                              </div>
+                          </div>
+                          <div class="text-center py-4">
+                              <h5 class="text-truncate">${guia.nome}</h5>
+                              <p class="m-0">${guia.linguagens}</p>
+                          </div>
+                      </div>
+              </div>
+          </div>
+  `;
+
+  console.log(guia.nome)
+  document.querySelector("#listaGuias .row").innerHTML += html;
+});
+
+
+
+
+   

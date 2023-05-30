@@ -24,8 +24,16 @@
 
     
     <link href="css/style.css" rel="stylesheet">
-    <script src="bd/cidades.js"></script>
+    
     <script src="bd/avaliacoes.js"></script>
+    <script src="bd/cidades.js"></script>
+    <script src="bd/guias.js"></script>
+    <script src="bd/reservas.js"></script>
+    <script src="bd/tipoTour.js"></script>
+    <script src="bd/visitantes.js"></script>
+    
+    
+
 </head>
 
 <body>
@@ -108,7 +116,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Tours & Guias</h4>
                             <h1 class="display-3 text-white mb-md-4">Os Melhores Guias da Europa</h1>
-                            <a href="tipotour.html" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserva agora</a>
+                            <a href="#locais" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserva agora</a>
                         </div>
                     </div>
                 </div>
@@ -118,7 +126,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Tours & Guias</h4>
                             <h1 class="display-3 text-white mb-md-4">Onde é que te podemos levar ? Encontre o seu destino...</h1>
-                            <a href="tipotour.html" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserva agora</a>
+                            <a href="#locais" class="btn btn-primary py-md-3 px-md-5 mt-2">Reserva agora</a>
                         </div>
                     </div>
                 </div>
@@ -155,7 +163,9 @@
                                         <option value="4">Paris</option>
                                         <option value="5">Bratislava</option>
                                         <option value="6">Santorini</option>
-                                        <option value="7">Berlim</option>
+                                        <option value="7">Barcelona</option>
+                                        <option value="8">Budapeste</option>
+                                        <option value="9">Veneza</option>
                                     </select>
                                 </div>
                             </div>
@@ -166,13 +176,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--<div class="col-md-3">
+                            <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
-                                    <div class="date" id="date2" data-target-input="nearest">
-                                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Return Date" data-target="#date2" data-toggle="datetimepicker"/>
-                                    </div>
+                                    <select class="custom-select px-4" style="height: 47px;">
+                                        <option selected>Tipo</option>
+                                        <option value="1">Tuk Tuk</option>
+                                        <option value="2">A pé</option>
+                                    </select>
                                 </div>
-                            </div> -->
+                            </div>
                             <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
                                     <select class="custom-select px-4" style="height: 47px;">
@@ -220,7 +232,7 @@
                                 <img class="img-fluid" src="img/sobre-3.png" alt="">
                             </div>
                         </div>
-                        <a href="tipotour.html" class="btn btn-primary mt-1">Reserva agora</a>
+                        <a href="#locais" class="btn btn-primary mt-1">Reserva agora</a>
                     </div>
                 </div>
             </div>
@@ -557,7 +569,7 @@
                 <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">FeedBack</h6>
                 <h1>Vê aquilo que os nossos clientes escrevem sobre nós</h1>
             </div>
-            <!--
+            
             <div class="owl-carousel testimonial-carousel">
                 <div class="text-center pb-4">
                     <img class="img-fluid mx-auto" src="img/testimonial-1.jpg" style="width: 100px; height: 100px;" >
@@ -651,12 +663,16 @@
                     </div>
                 </div>
             </div>
-            -->
             
+            <!--
             <div class="owl-item testimonial-carousel">
                 <div id="listaAvaliacoes"> 
                     
                 </div>
+            </div>
+            -->
+            <div id="listaAvaliacoes"> 
+                    
             </div>
     
     
@@ -760,15 +776,17 @@
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!-- Contact Javascript File -->
+    <!-- Contact Javascript File 
     <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+    <script src="mail/contact.js"></script>-->
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    <script src="js/avaliacoes.js"></script>
+    <!--<script src="js/main.js"></script>
+    <script src="js/avaliacoes.js"></script>-->
+    <script src="js/index.js"></script>
+    <!--<script src="js/cidades.js"></script>-->
 
-    <script type="module" src="./bd/localStorage.js"></script>
+    <!--<script type="module" src="./bd/localStorage.js"></script>-->
 </body>
 
 </html>

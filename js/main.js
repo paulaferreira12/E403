@@ -75,6 +75,7 @@
 /* Back to top button */
 
 /* Tentativa de log in*/
+/*
 function store() {
 
   var email = document.getElementById('email');
@@ -113,12 +114,12 @@ function check() {
   } else {
     alert('Error on login');
   }
-}
+}*/
 
 /* End login*/
 
 /* local storage cidades*/
-let cidadesLista = JSON.parse(localStorage.getItem("cidades"));
+/*let cidadesLista = JSON.parse(localStorage.getItem("cidades"));
 
 cidadesLista.forEach(cidade => {
   let html = `<div class="col-md-4 mb-4"> 
@@ -145,7 +146,7 @@ cidadesLista.forEach(cidade => {
     // window.location.href = `pagina-cidade.html?cidade=${cidade.nome}`;
   });
 });
-
+*/
 /*Ir buscar id do tipo de tour */
 /*let tipoTourBotao = document.getElementById("tipoTourBotao")
 
@@ -204,7 +205,7 @@ tipoTourBotao.addEventListener("click", function () {
     closePopup(popupId);
   } */
 
-function enviarEmail() {
+/*function enviarEmail() {
   // Obter o valor do campo de email preenchido pelo usuário
   var email = document.getElementById('email').value;
 
@@ -221,6 +222,6 @@ function enviarEmail() {
 
   // Fechar o popup após enviar o email
   closePopup('popup1');
-}
+}*/
 
   /*Fim codigo email*/

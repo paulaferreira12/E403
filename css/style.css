@@ -9662,6 +9662,11 @@ h6,
   border-width: 30px;
 }
 
+.destination-item {
+  width: 22rem; /* Fixed */
+  height: auto; /* Auto adjusts to image ratio */
+  }
+
 .service-item {
   transition: .5s;
 }
