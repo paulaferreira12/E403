@@ -1,33 +1,26 @@
-let listaGuias = [{
-    "id": "0",
-    "nome": "Guia1",
-    "linguagens": "Portugues, Ingles, Frances",
-    "imagem": "img/guide1",
-},
+let guia1 = {
+    id: "g1",
+    nome: "Rui Coelho",
+    cidade: "porto",
+    descricao: "aaaaaaaa",
+    imagem1: "img/porto.jpg",
+}
 
-{
-    "id": "1",
-    "nome": "Guia2",
-    "linguagens": "Portugues, Ingles, Frances",
-    "imagem": "img/guide2",
-},
-
-{
-    "id": "2",
-    "nome": "Guia3",
-    "linguagens": "Portugues, Ingles, Frances",
-    "imagem": "img/guide3",
-},
-
-{
-    "id": "3",
-    "nome": "Guia4",
-    "linguagens": "Portugues, Ingles, Frances",
-    "imagem": "img/guide4",
-},
+let guia2 = {
+    id: "g2",
+    nome: "Joaquim Fernandes",
+    cidade: "lisboa",
+    descricao: "aaaaaaaa",
+    imagem1: "img/lisboa.jpg",
+}
 
 
-
-]
-
-localStorage.setItem("guias", JSON.stringify(listaGuias));
+//funçao que tem no fim de todos os js da bd
+export function guias() {
+    if (!localStorage.getItem("guias")) {
+        let guias = Array();
+        promocoes.push(guia1)
+        localStorage.setItem("guias", JSON.stringify(guias));
+        console.log("ola");
+    }
+}
